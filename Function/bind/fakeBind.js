@@ -17,10 +17,13 @@ Function.prototype.fakeBind = function (context) {
   const bound = function () {
     return that.apply(this instanceof bound ? this : context, args.concat([...arguments]))
   }
+  // 维护函数的prototype
   if(this.prototype) {
     fNop.prototype = this.prototype
   }
+  //
   bound.prototype = new fNop()
+  bound.constructor = bound
 
   return bound
 
