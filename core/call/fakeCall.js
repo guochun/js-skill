@@ -1,11 +1,11 @@
-Function.prototype.fakeCall = function (content) {
+Function.prototype.fakeCall = function (context) {
   if (typeof this !== 'function') {
     throw new TypeError('this must be function')
   }
-  content = content || window || global
-  content.fn = this
+  context = context || window || global
+  context.fn = this
   const args = [...arguments].slice(1)
-  const result = content.fn(...args)
+  const result = context.fn(...args)
   return result
 }
 
