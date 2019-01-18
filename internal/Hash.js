@@ -43,3 +43,5 @@ class Hash {
     return result
   }
 }
+
+export default Hash
