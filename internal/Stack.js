@@ -47,3 +47,5 @@ class Stack {
     return result
   }
 }
+
+export default Stack
