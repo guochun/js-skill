@@ -8,3 +8,5 @@ function everyValue(object, predicate) {
 
   return true
 }
+
+export default everyValue
